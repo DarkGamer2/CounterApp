@@ -1,26 +1,9 @@
 import {View,Text, Pressable} from "react-native";
 import {useState} from "react";
-import {useFonts} from "expo-font"
-import { useCallback } from "react"
 const Counter=()=>{
     const [count,setCount]=useState(0);
-
-    const [fontsLoaded,fontError]=useFonts({
-        'BebasNeue':require("../assets/fonts/BebasNeue-Regular.ttf")
-    })
-
-    const onLayoutRootView = useCallback(async () => {
-        if (fontsLoaded || fontError) {
-          await SplashScreen.hideAsync();
-        }
-      }, [fontsLoaded, fontError]);
-    
-      if (!fontsLoaded && !fontError) {
-        return null;
-      }
-
 return (
-    <View style={counterStyles.container} onLayout={onLayoutRootView}>
+    <View style={counterStyles.container}>
         <Text style={counterStyles.title}>Counter</Text>
         <Text style={counterStyles.countText}>{count}</Text>
         <Pressable style={counterStyles.increaseButton} onPress={()=>setCount(count + 1)}>
@@ -66,7 +49,7 @@ const counterStyles={
         fontSize:30,
         fontWeight: 'bold',
         textAlign: 'center',
-        fontFamily:"BebasNeue"
+        fontFamily:"BebasNeue-Regular"
     },
     resetButton:{
         backgroundColor:'#ff0000',
