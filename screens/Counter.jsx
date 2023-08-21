@@ -48,8 +48,7 @@ const counterStyles={
     title:{
         fontSize:30,
         fontWeight: 'bold',
-        textAlign: 'center',
-        fontFamily:"BebasNeue-Regular"
+        textAlign: 'center'
     },
     resetButton:{
         backgroundColor:'#ff0000',
